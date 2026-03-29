@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📞 Поиск по номеру телефона РФ</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">📞 <span>Поиск по номеру РФ</span></div>
+      <button class="theme-toggle" id="themeToggle" title="Сменить тему">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="search-section">
+      <h1 class="title">Узнайте оператора и регион</h1>
+      <p class="subtitle">Введите российский номер телефона</p>
+      <div class="search-box">
+        <input
+          type="tel"
+          id="phoneInput"
+          class="search-input"
+          placeholder="+7 (___) ___-__-__"
+          maxlength="18"
+          autocomplete="off"
+        />
+        <button class="search-btn" id="searchBtn">Найти</button>
+      </div>
+      <div class="error-msg" id="errorMsg"></div>
+    </section>
+
+    <section class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Поиск информации...</p>
+    </section>
+
+    <section class="result-card" id="resultCard">
+      <div class="result-header">
+        <span class="result-number" id="resultNumber"></span>
+        <button class="copy-btn" id="copyBtn" title="Копировать результат">📋 Копировать</button>
+      </div>
+      <div class="result-grid">
+        <div class="result-item">
+          <span class="result-icon">🏢</span>
+          <div>
+            <div class="result-label">Оператор</div>
+            <div class="result-value" id="resultOperator">—</div>
+          </div>
+        </div>
+        <div class="result-item">
+          <span class="result-icon">📍</span>
+          <div>
+            <div class="result-label">Регион</div>
+            <div class="result-value" id="resultRegion">—</div>
+          </div>
+        </div>
+        <div class="result-item">
+          <span class="result-icon">📊</span>
+          <div>
+            <div class="result-label">Тип номера</div>
+            <div class="result-value" id="resultType">—</div>
+          </div>
+        </div>
+        <div class="result-item">
+          <span class="result-icon">🔢</span>
+          <div>
+            <div class="result-label">Код DEF/ABC</div>
+            <div class="result-value" id="resultCode">—</div>
+          </div>
+        </div>
+        <div class="result-item">
+          <span class="result-icon">✅</span>
+          <div>
+            <div class="result-label">Источник</div>
+            <div class="result-value" id="resultSource">—</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="history-section" id="historySection">
+      <div class="history-header">
+        <span>🕐 История поиска</span>
+        <button class="clear-btn" id="clearHistory">Очистить</button>
+      </div>
+      <ul class="history-list" id="historyList"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Данные: <a href="https://num.voxlink.ru" target="_blank">num.voxlink.ru</a> · Реестр нумерации Минцифры РФ</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
